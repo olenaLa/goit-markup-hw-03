@@ -17,10 +17,12 @@ body {
   font-family: Roboto, sans-serif;
   letter-spacing: 0.03em;
 }
-body li {
-  list-style-type: none;
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-li a {
+.list a {
   text-decoration: none;
 }
 .container {
@@ -81,35 +83,60 @@ nav a,
   text-align: center;
 }
 .hero-title {
-  margin-bottom: 46;
+  margin-top: 0;
+  margin-bottom: 46px;
 }
 h1 {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  outline: 2px solid tomato;
 }
-.section .section-title {
+.section-title {
+  margin: 0;
+  padding: 0;
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
+  margin-bottom: 50px;
+}
+.section,
+.container.item-team {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.section.no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.section.no-top-padding {
+  padding-top: 0;
 }
 /* Особенности */
-.features h3 {
+.features img:hover {
+  background-color: var(--accent-color);
+}
+.features .title {
   color: var(--title-text-color);
+  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
 }
-.features img:hover {
-  background-color: var(--accent-color);
+.title.centered {
+  text-align: center;
 }
 .features p {
+  margin: 0;
+  padding: 0;
+
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
@@ -124,13 +151,20 @@ h1 {
   text-transform: uppercase;
 }
 /* Секция команда */
-.team h3 {
+.section.second-bcg {
+  background-color: var(--second-background);
+}
+.team .title {
   color: var(--title-text-color);
+  margin-top: 30px;
+  margin-bottom: 10px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
 }
 .team p {
+  margin: 0;
+  padding: 0;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.19;
