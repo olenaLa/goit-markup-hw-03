@@ -11,6 +11,8 @@
   --primary-white-color: #ffffff;
   --second-background: #f5f4fa;
   --footer-background: #2f303a;
+  --border: #ececec;
+  --border-client: #afb1b8;
 }
 body {
   background-color: var(--primary-white-color);
@@ -29,7 +31,7 @@ body {
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: 1230px;
+  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   /* outline: 2px solid tomato; */
@@ -45,10 +47,20 @@ body {
 .logo-regular:hover {
   color: var(--accent-color);
 }
-.logo-regular,
-.logo-accent:hover {
+.logo-accent:hover,
+.logo-regular {
   color: var(--title-text-color);
 }
+.logo-regular.invers {
+  color: var(--primary-white-color);
+}
+.logo-regular.invers:hover {
+  color: var(--accent-color);
+}
+.footer-flex .logo-accent:hover {
+  color: var(--primary-white-color);
+}
+
 nav a,
 .auth-nav a {
   text-decoration: none;
@@ -82,16 +94,10 @@ nav a,
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
-
 .site-nav .link:hover,
 .site-nav .link:focus,
 .site-nav .current:visited {
   color: var(--accent-color);
-}
-
-.main-nav {
-  display: flex;
-  align-items: center;
 }
 .left-nav {
   display: flex;
@@ -112,12 +118,19 @@ nav a,
 .auth-nav a:focus {
   color: var(--accent-color);
 }
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /* Главный заголовок */
 .hero {
   color: var(--primary-white-color);
   background-color: var(--primary-text-color);
   text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 .hero-title {
   margin-top: 0;
@@ -141,21 +154,22 @@ h1 {
   text-align: center;
   margin-bottom: 50px;
 }
-.section,
-.container.item-team {
+.container {
   padding-top: 94px;
   padding-bottom: 94px;
 }
-.section.no-padding {
+.container.main-nav,
+.footer > .container {
   padding-top: 0;
   padding-bottom: 0;
 }
-.section.no-top-padding {
-  padding-top: 0;
-}
+
 /* Особенности */
 .features img:hover {
   background-color: var(--accent-color);
+}
+.features {
+  display: flex;
 }
 .features .title {
   color: var(--title-text-color);
@@ -178,14 +192,23 @@ h1 {
   font-size: 14px;
   line-height: 1.71;
 }
-.features {
-  display: flex;
+.features .item {
+  width: calc(100% - 120px);
+  /* width: 270px; */
+  /* text-align: center; */
 }
 .features .item:not(:last-child) {
   margin-right: 30px;
 }
+.features-border {
+  border-bottom: 1px solid var(--border);
+}
+
 .scope {
   display: flex;
+}
+.scope .item {
+  width: calc(100% - 120px);
 }
 .scope .item:not(:last-child) {
   margin-right: 30px;
@@ -195,20 +218,30 @@ h1 {
   display: flex;
   text-align: center;
 }
+.team .item {
+  width: calc(100% - 120px);
+}
 .team .item:not(:last-child) {
   margin-right: 30px;
 }
+
 .social-link-list {
   display: flex;
   justify-content: center;
   margin-top: 16px;
 }
+.social-link-list .item {
+  width: 20px;
+}
 .social-link-list .item:not(:last-child) {
-  margin-right: 30px;
+  margin-right: 10px;
+}
+
+.client-list .item {
+  width: calc(100% - 120px);
 }
 .client-list {
   display: flex;
-  justify-content: center;
 }
 .client-list .item:not(:last-child) {
   margin-right: 30px;
@@ -260,26 +293,37 @@ footer {
   background-color: var(--primary-text-color);
 }
 address {
+  display: flex;
+  flex-direction: column;
   font-style: normal;
-  margin-top: 10px;
+}
+.footer-flex .logo {
+  display: block;
+  margin-bottom: 9px;
+}
+address .item:not(:last-child) {
+  display: block;
+  margin-top: 0;
   margin-bottom: 9px;
 }
 .footer-offer {
-  display: inline-block;
+  display: block;
   margin-bottom: 21px;
 }
 .adress-transparency,
-.footer-transparency {
+.footer-copyright {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
 }
-.footer-transparency {
+.footer-copyright {
   font-size: 12px;
   line-height: 2;
   margin: 0;
-  margin-top: 46px;
+  margin-top: 0;
+  padding-top: 18px;
+  padding-bottom: 21px;
   text-align: center;
 }
 footer b {
@@ -306,7 +350,11 @@ footer b {
 }
 .footer-flex {
   display: flex;
+  padding-top: 48px;
+  padding-bottom: 28px;
+  align-items: baseline;
   justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 /* Кнопка на главной */
 .main-button {
@@ -315,7 +363,6 @@ footer b {
   padding: 10px 32px;
   border: 1px solid transparent;
   border-radius: 4px;
-
   color: var(--primary-white-color);
   background-color: var(--accent-color);
   font-family: inherit;
