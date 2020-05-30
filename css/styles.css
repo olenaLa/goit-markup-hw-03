@@ -184,9 +184,7 @@ h1 {
 }
 
 /* Особенности */
-.features img:hover {
-  background-color: var(--accent-color);
-}
+
 .features {
   display: flex;
 }
@@ -200,13 +198,7 @@ h1 {
   line-height: 1.14;
   text-transform: uppercase;
 }
-.scope-title {
-  margin: 0;
-  padding: 0;
-  padding-top: 27px;
-  padding-bottom: 27px;
-  text-align: center;
-}
+
 .features p {
   margin: 0;
   padding: 0;
@@ -224,9 +216,39 @@ h1 {
 .features-border {
   border-bottom: 1px solid var(--border);
 }
+.features .item::before {
+  display: block;
+  content: '';
+  height: 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--second-background);
+}
+.icon-antenna::before {
+  background-image: url('../images/section-top/antenna-1.svg');
+  background-size: 70px;
+}
+.icon-clock::before {
+  background-image: url('../images/section-top/clock-1.svg');
+  background-size: 70px;
+}
+.icon-diagram::before {
+  background-image: url('../images/section-top/diagram-1.svg');
+  background-size: 70px;
+}
+.icon-astronaut::before {
+  background-image: url('../images/section-top/astronaut-1.svg');
+  background-size: 70px;
+}
 
 /* Секция сфер деятельности */
 .scope-title {
+  margin: 0;
+  padding: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  text-align: center;
+
   color: var(--primary-white-color);
   background-color: var(--primary-text-color);
   font-weight: 700;
